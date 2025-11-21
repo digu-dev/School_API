@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Data
 @ToString
-@Table(name = "classRoom")
 public class ClassRoom {
 
     @Id
@@ -19,10 +18,10 @@ public class ClassRoom {
     @Enumerated
     private Period period;
 
-    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL)
-    private List<Student> students;
+    @OneToMany(mappedBy = "classRoom")
+    private List<Registration> registrations;
 
-    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "classRoom")
     private List<Class> classes;
 
 }

@@ -2,7 +2,7 @@ package com.github.digu_dev.schoolapi.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.ToString;
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,8 +10,6 @@ import java.util.UUID;
 
 @Entity
 @Data
-@ToString
-@Table(name = "student")
 public class Student {
 
     @Id
@@ -32,12 +30,12 @@ public class Student {
     @Enumerated(EnumType.STRING)
     private Period period;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "classroom_id")
     private ClassRoom classRoom;
 
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "student")
     private List<Registration> registrations;
 
     }

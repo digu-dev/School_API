@@ -28,7 +28,7 @@ public class Teacher {
 
     private Integer classesperWeek;
 
-    @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "teacher")
     private List<Class> classes;
 
 }

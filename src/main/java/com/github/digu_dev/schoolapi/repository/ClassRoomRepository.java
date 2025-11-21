@@ -1,4 +1,7 @@
 package com.github.digu_dev.schoolapi.repository;
 
-public interface ClassRoomRepository {
+import com.github.digu_dev.schoolapi.model.ClassRoom;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ClassRoomRepository extends JpaRepository<ClassRoom, Long> {
 }

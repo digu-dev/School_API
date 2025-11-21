@@ -7,7 +7,6 @@ import lombok.ToString;
 @Entity
 @Data
 @ToString
-@Table(name = "grades")
 public class Grades {
 
     @Id
@@ -18,7 +17,7 @@ public class Grades {
 
     private Double grade;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "registration_id", nullable = false)
     private Registration registration;
 }

@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Data
 @ToString
-@Table(name = "subject")
 public class Subject {
 
     @Id
@@ -18,10 +17,10 @@ public class Subject {
 
     private String name;
 
-    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "subject")
     private List<Registration> registration;
 
-    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "subject")
     private List<Class> classes;
 
 
