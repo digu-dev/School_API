@@ -1,0 +1,25 @@
+package com.github.digu_dev.schoolapi.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.ToString;
+
+@Entity
+@Data
+@ToString
+public class Grades {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Integer bimester;
+
+    private Double grade;
+
+    @ManyToOne
+    private Student student;
+
+    @ManyToOne
+    private Subject subject;
+}
