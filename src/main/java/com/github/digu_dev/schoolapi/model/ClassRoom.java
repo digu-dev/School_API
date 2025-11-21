@@ -9,18 +9,20 @@ import java.util.List;
 @Entity
 @Data
 @ToString
+@Table(name = "classRoom")
 public class ClassRoom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
+    @Enumerated
     private Period period;
 
-    @OneToMany
+    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL)
     private List<Student> students;
 
-    @OneToMany
-    private List<Teacher> teachers;
+    @OneToMany(mappedBy = "classRoom", cascade = CascadeType.ALL)
+    private List<Class> classes;
 
 }
