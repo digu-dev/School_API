@@ -13,7 +13,7 @@ public class Registration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long studentId;
 
     @ManyToOne
     @JoinColumn(name = "student_id", nullable = false)

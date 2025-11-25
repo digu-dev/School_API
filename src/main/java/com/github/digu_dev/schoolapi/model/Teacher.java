@@ -26,7 +26,7 @@ public class Teacher {
 
     private LocalDate birthDate;
 
-    private Integer classesperWeek;
+    private Integer classesPerWeek;
 
     @OneToMany(mappedBy = "teacher")
     private List<Class> classes;
