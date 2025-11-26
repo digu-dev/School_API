@@ -1,13 +1,12 @@
 package com.github.digu_dev.schoolapi.controller;
 
 import com.github.digu_dev.schoolapi.controller.dto.GradesDTO;
-import com.github.digu_dev.schoolapi.controller.exceptions.ErrorDetails;
 import com.github.digu_dev.schoolapi.controller.exceptions.ResourceNotFoundException;
+import com.github.digu_dev.schoolapi.controller.exceptions.ResponseError;
 import com.github.digu_dev.schoolapi.model.Grades;
 import com.github.digu_dev.schoolapi.service.GradesService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,8 +33,9 @@ public class GradesController {
 
            return ResponseEntity.created(location).build();
         } catch (ResourceNotFoundException e){
-            // terminar aqui
 
+            ResponseError conflict = ResponseError.conflict(e.getMessage());
+            return ResponseEntity.status(conflict.status()).body(conflict);
         }
     }
 }

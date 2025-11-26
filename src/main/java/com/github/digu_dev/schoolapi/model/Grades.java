@@ -7,6 +7,7 @@ import lombok.ToString;
 @Entity
 @Data
 @ToString
+@M
 public class Grades {
 
     @Id

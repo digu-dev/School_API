@@ -32,7 +32,7 @@ public class GlobalExceptionsHandler {
 
         ErrorDetails errorDetails = new ErrorDetails(
                 new Date(),
-                "Falha na Validação do DTO",
+                "DTO Validation Failed",
                 defaultMessage,
                 HttpStatus.BAD_REQUEST.value()
         );
@@ -43,7 +43,7 @@ public class GlobalExceptionsHandler {
     public ResponseEntity<ErrorDetails> handleGlobalException(Exception ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(
                 new Date(),
-                "Erro interno no servidor: " + ex.getMessage(),
+                "Internal Server Error: " + ex.getMessage(),
                 request.getDescription(false),
                 HttpStatus.INTERNAL_SERVER_ERROR.value()
         );

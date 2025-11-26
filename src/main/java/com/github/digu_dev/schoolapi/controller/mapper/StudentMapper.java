@@ -8,14 +8,12 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface StudentMapper {
 
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "age", target = "age")
-    @Mapping(source = "birthDate", target = "birthDate")
-    Student toDTO(StudentDTO studentDTO);
 
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "age", target = "age")
-    @Mapping(source = "birthDate", target = "birthDate")
-    StudentDTO toEntity(Student student);
+    @Mapping(source = "id", target = "id")
+    public StudentDTO toDTO(Student student);
+
+
+    @Mapping(source = "id", target = "id")
+    public Student toEntity(StudentDTO studentDTO);
 
 }

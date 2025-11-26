@@ -45,7 +45,7 @@ public class GradesService {
 
        Registration registration = registrationRepository.findById(dto.id())
                 .orElseThrow(() -> new ResourceNotFoundException("Registration Id not found: " + dto.id()));
-        Grades newGrade = gradesMapper.toEntity(dto);
+        Grades newGrade = gradesMapper.toEntity(new Grades());
         return gradesRepository.save(newGrade);
     }
 

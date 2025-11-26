@@ -8,9 +8,9 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface ClassRoomMapper {
 
-    @Mapping(source = "period", target = "period")
-    ClassRoom toDTO(ClassRoomDTO classRoomDTO);
+    @Mapping(source = "classRoom.id", target = "id")
+    public ClassRoomDTO toDTO(ClassRoom classRoom);
 
-    @Mapping(source = "period", target = "period")
-    ClassRoomDTO toEntity(ClassRoom classRoom);
+    @Mapping(source = "classRoom.id", target = "id")
+    public ClassRoom toEntity(ClassRoomDTO classRoomDTO);
 }

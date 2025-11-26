@@ -10,8 +10,8 @@ import org.mapstruct.Mapping;
 public interface ClassMapper {
 
     @Mapping(source = "id", target = "id")
-    Class toDTO(ClassDTO classDTO);
+   public Class toDTO(ClassDTO classDTO);
 
     @Mapping(source = "id", target = "id")
-    ClassDTO toEntity (Class classes);
+    public ClassDTO toEntity (Class classes);
 }

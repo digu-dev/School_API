@@ -8,15 +8,9 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface TeacherMapper {
 
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "educationLevel", target = "educationLevel")
-    @Mapping(source = "birthDate", target = "birthDate")
-    @Mapping(source = "classesPerWeek", target = "classesPerWeek")
-    Teacher toDTO (TeacherDTO teacherDTO);
+    @Mapping(source = "id", target = "id")
+    public TeacherDTO toDTO (Teacher teacher);
 
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "educationLevel", target = "educationLevel")
-    @Mapping(source = "birthDate", target = "birthDate")
-    @Mapping(source = "classesPerWeek", target = "classesPerWeek")
-    TeacherDTO toEntity(Teacher teacher);
+    @Mapping(source = "id", target = "id")
+    public Teacher toEntity(TeacherDTO teacherDTO);
 }
